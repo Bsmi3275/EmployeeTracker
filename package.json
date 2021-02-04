@@ -1,0 +1,25 @@
+{
+    "name": "employee-tracker",
+    "version": "1.0.0",
+    "description": "beautiful app to track yo employees",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node index.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/coding-boot-camp/unit12hw.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/coding-boot-camp/unit12hw/issues"
+    },
+    "homepage": "https://github.com/coding-boot-camp/unit12hw#readme",
+    "dependencies": {
+        "console.table": "^0.10.0",
+        "inquirer": "^6.2.1",
+        "mysql": "^2.16.0"
+    }
+}
