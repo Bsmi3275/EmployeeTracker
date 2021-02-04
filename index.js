@@ -49,7 +49,7 @@ function start() {
 function addEmployee() {
     connection.query("SELECT * FROM role", function (err, roleresults) {
         if (err) throw err;
-        connection.query("SELECT * FROM employees", function (err, employeeresults) {
+        connection.query("SELECT * FROM employee", function (err, employeeresults) {
             if (err) throw err;
 
             inquirer
@@ -103,7 +103,7 @@ function addEmployee() {
                 }
 
                 connection.query(
-                    "INSERT INTO employees SET ?",
+                    "INSERT INTO employee SET ?",
                     {
                         first_name: answer.firstName,
                         last_name: answer.lastName,
@@ -205,7 +205,7 @@ function addRole() {
                 }
                 
                 function viewEmployees() {
-                    var query = "SELECT employees.first_name, employees.last_name, role.occupation, role.salary, dept.dept_name FROM employees INNER JOIN role INNER JOIN dept ON (employees.role_id = role_id AND role.dept_id = dept_id"
+                    var query = "SELECT employee.first_name, employee.last_name, role.occupation, role.salary, dept.dept_name FROM employee INNER JOIN role INNER JOIN dept ON (employee.role_id = role_id AND role.dept_id = dept_id"
                 
                     connection.query(query, function (err, employeeresponse) {
                         if (err) throw err;
@@ -274,7 +274,7 @@ function addRole() {
                     }
     
                     connection.query(
-                        `UPDATE employees SET ? WHERE ?`,
+                        `UPDATE employee SET ? WHERE ?`,
                         [
                             {
                                 role_id: roleId
